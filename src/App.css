@@ -1,0 +1,1751 @@
+.app {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Боковое меню */
+.sidebar {
+  width: 260px;
+  min-height: 100vh;
+  padding: 35px 24px;
+  background: #ffffff;
+  border-right: 1px solid #e9e9f3;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h2 {
+  font-size: 23px;
+  color: #7357e8;
+  margin-bottom: 8px;
+}
+
+.sidebar p {
+  font-size: 13px;
+  color: #9295a5;
+  margin-bottom: 45px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sidebar nav button {
+  width: 100%;
+  padding: 15px 17px;
+  border: none;
+  background: transparent;
+  color: #616579;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sidebar nav button:hover {
+  background: #f0edff;
+  color: #7357e8;
+}
+
+.sidebar nav button.active {
+  background: #f0edff;
+  color: #7357e8;
+  font-weight: 700;
+}
+
+.sidebar nav button:focus-visible {
+  outline: 3px solid #a08bfb;
+  outline-offset: 2px;
+}
+
+/* Основная часть */
+.main-content {
+  flex: 1;
+  min-width: 0;
+  padding: 40px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.header {
+  background: linear-gradient(120deg, #7357e8, #a08bfb);
+  color: white;
+  padding: 40px;
+  border-radius: 22px;
+  margin-bottom: 32px;
+  box-shadow: 0 12px 30px rgba(115, 87, 232, 0.16);
+}
+
+.header h1 {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.header p {
+  opacity: 0.9;
+  font-size: 15px;
+}
+
+/* Статистика */
+.statistics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background: #ffffff;
+  padding: 26px;
+  border-radius: 18px;
+  border: 1px solid #eeeef6;
+  box-shadow: 0 6px 22px rgba(45, 43, 90, 0.04);
+  transition: 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(115, 87, 232, 0.12);
+}
+
+.stat-card h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #818597;
+  margin-bottom: 18px;
+}
+
+.stat-card h2 {
+  font-size: 34px;
+  font-weight: 700;
+  color: #7357e8;
+}
+
+.stat-card:nth-child(2) h2 {
+  color: #22b58a;
+}
+
+.stat-card:nth-child(3) h2 {
+  color: #f09b51;
+}
+
+/* Лабораторные работы */
+.tasks-section {
+  scroll-margin-top: 25px;
+}
+
+.tasks-section h2 {
+  font-size: 22px;
+  margin-bottom: 24px;
+  color: #25283d;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.task-card {
+  background: #ffffff;
+  padding: 24px 28px;
+  border-radius: 18px;
+  border: 1px solid #eeeef6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  transition: 0.3s;
+}
+
+.task-card:hover {
+  border-color: #c9bfff;
+  box-shadow: 0 8px 24px rgba(115, 87, 232, 0.08);
+}
+
+.task-card h3 {
+  color: #292c42;
+  font-size: 17px;
+  margin-bottom: 9px;
+}
+
+.task-card p {
+  font-size: 14px;
+  color: #7f8395;
+  margin-bottom: 12px;
+}
+
+.task-card small {
+  color: #a0a3b1;
+  font-size: 12px;
+}
+
+/* Кнопки */
+.task-card button {
+  border: none;
+  background: #7357e8;
+  color: white;
+  padding: 13px 20px;
+  border-radius: 11px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+.task-card button:hover {
+  background: #5e43ce;
+  transform: translateY(-2px);
+}
+
+.task-card button:focus-visible {
+  outline: 3px solid #c9bfff;
+  outline-offset: 3px;
+}
+
+/* Форма добавления заданий */
+.add-task-section {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  margin-bottom: 35px;
+  border: 1px solid #eeeef6;
+}
+
+.add-task-section h2 {
+  font-size: 21px;
+  margin-bottom: 25px;
+  color: #25283d;
+}
+
+.task-form {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #686d82;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #e0e0ec;
+  border-radius: 10px;
+  outline: none;
+  background: #fafaff;
+  color: #25283d;
+}
+
+.form-group input:focus {
+  border-color: #7357e8;
+}
+
+.add-task-btn {
+  padding: 14px 25px;
+  border: none;
+  border-radius: 11px;
+  background: #7357e8;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.add-task-btn:hover {
+  background: #5e43ce;
+}
+
+/* Кнопки управления заданиями */
+
+.task-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.task-card .edit-button {
+  background: #f0edff;
+  color: #7357e8;
+}
+
+.task-card .edit-button:hover {
+  background: #e3dcff;
+}
+
+.task-card .delete-button {
+  background: #fff0f0;
+  color: #e45c65;
+}
+
+.task-card .delete-button:hover {
+  background: #ffe0e0;
+}
+
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.cancel-btn {
+  border: 1px solid #dddbea;
+  background: white;
+  color: #666a80;
+  padding: 14px 25px;
+  border-radius: 11px;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background: #f5f5fa;
+}
+
+/* Раздел Мои предметы */
+
+.subjects-section {
+  margin-bottom: 35px;
+  scroll-margin-top: 25px;
+}
+
+.subjects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 24px;
+}
+
+.subjects-header h2 {
+  font-size: 22px;
+  color: #25283d;
+}
+
+.subjects-header span {
+  color: #818597;
+  font-size: 14px;
+}
+
+.subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.subject-card {
+  position: relative;
+  background: white;
+  padding: 25px;
+  border-radius: 18px;
+  border: 1px solid #eeeef6;
+  transition: 0.3s;
+}
+
+.subject-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(115, 87, 232, 0.1);
+}
+
+.subject-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0edff;
+  border-radius: 13px;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.subject-card h3 {
+  font-size: 17px;
+  color: #25283d;
+  margin-bottom: 18px;
+  overflow-wrap: anywhere;
+}
+
+.subject-card p {
+  font-size: 13px;
+  color: #818597;
+  margin-bottom: 10px;
+}
+
+.subject-progress-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 12px;
+  color: #818597;
+}
+
+.subject-progress-info strong {
+  color: #7357e8;
+}
+
+.subject-progress-bar {
+  width: 100%;
+  height: 9px;
+  background: #eeeafd;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.subject-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #7357e8, #aa97ff);
+  border-radius: 20px;
+  transition: width 0.4s ease;
+}
+
+.subject-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.subject-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 14px 18px;
+  border: 1px solid #e0e0ec;
+  border-radius: 12px;
+  outline: none;
+}
+
+.subject-form input:focus {
+  border-color: #7357e8;
+}
+
+.subject-form button {
+  padding: 14px 22px;
+  border: none;
+  background: #7357e8;
+  color: white;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #e0e0ec;
+  border-radius: 10px;
+  outline: none;
+  background: #fafaff;
+  color: #25283d;
+  cursor: pointer;
+}
+
+.form-group select:focus {
+  border-color: #7357e8;
+}
+
+/* Меню предмета */
+
+.subject-menu {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+}
+
+.subject-menu-btn {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: #777b90;
+  font-size: 27px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subject-menu-btn:hover {
+  background: #f0edff;
+  color: #7357e8;
+}
+
+.subject-dropdown {
+  position: absolute;
+  top: 42px;
+  right: 0;
+  min-width: 170px;
+  background: white;
+  border: 1px solid #eeeef6;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  padding: 6px;
+  z-index: 10;
+}
+
+.subject-dropdown button {
+  width: 100%;
+  padding: 11px 13px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 13px;
+  color: #e45c65;
+  cursor: pointer;
+}
+
+.subject-dropdown button:hover {
+  background: #fff0f0;
+}
+
+.subject-dropdown .subject-edit-option {
+  color: #7357e8;
+}
+
+.subject-dropdown .subject-edit-option:hover {
+  background: #f0edff;
+}
+
+/* Календарь */
+
+.calendar-section {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid #eeeef6;
+  margin-bottom: 35px;
+  scroll-margin-top: 25px;
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.calendar-header h2 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.calendar-header p {
+  color: #818597;
+  font-size: 13px;
+}
+
+.calendar-navigation {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.calendar-navigation strong {
+  min-width: 125px;
+  text-align: center;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.calendar-navigation button {
+  border: none;
+  background: #f0edff;
+  color: #7357e8;
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.calendar-weekday {
+  padding: 12px 0;
+  text-align: center;
+  color: #9295a5;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.calendar-day {
+  min-width: 0;
+  min-height: 75px;
+  background: #f8f8fc;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  transition: 0.2s;
+}
+
+.calendar-day:hover {
+  background: #f0edff;
+}
+
+.calendar-day.today {
+  border-color: #7357e8;
+}
+
+.calendar-day.selected {
+  background: #7357e8;
+  color: white;
+}
+
+.calendar-day small {
+  font-size: 10px;
+  color: #7357e8;
+  text-align: center;
+}
+
+.calendar-day.selected small {
+  color: white;
+}
+
+.calendar-details {
+  margin-top: 30px;
+  padding-top: 25px;
+  border-top: 1px solid #eeeef6;
+}
+
+.calendar-details h3 {
+  font-size: 17px;
+  margin-bottom: 18px;
+}
+
+.calendar-details>p {
+  color: #9295a5;
+  font-size: 14px;
+}
+
+.calendar-task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 16px;
+  margin-bottom: 10px;
+  background: #f8f8fc;
+  border-radius: 12px;
+}
+
+.calendar-task strong {
+  font-size: 14px;
+}
+
+.calendar-task p {
+  color: #9295a5;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.calendar-task span {
+  font-size: 12px;
+  color: #7357e8;
+  font-weight: 600;
+}
+
+/* Ближайшие дедлайны */
+
+.deadlines-section {
+  margin-bottom: 35px;
+}
+
+.deadlines-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.deadlines-header h2 {
+  font-size: 22px;
+  color: #25283d;
+}
+
+.deadlines-header span {
+  color: #9295a5;
+  font-size: 13px;
+}
+
+.deadlines-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.deadline-card {
+  background: white;
+  border: 1px solid #eeeef6;
+  border-radius: 16px;
+  padding: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.deadline-info h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #25283d;
+}
+
+.deadline-info p {
+  color: #818597;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.deadline-info small {
+  color: #a0a3b1;
+  font-size: 12px;
+}
+
+.deadline-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.deadline-badge {
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.deadline-badge.overdue {
+  background: #fff0f0;
+  color: #e45c65;
+}
+
+.deadline-badge.urgent {
+  background: #fff3e5;
+  color: #df8b2f;
+}
+
+.deadline-badge.normal {
+  background: #e8faf4;
+  color: #22a57c;
+}
+
+.deadline-actions button {
+  background: #f0edff;
+  color: #7357e8;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.deadline-actions button:hover {
+  background: #e3dcff;
+}
+
+.deadlines-empty {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  color: #22a57c;
+}
+
+/* Статистика успеваемости */
+
+.analytics-section {
+  margin-bottom: 35px;
+  scroll-margin-top: 25px;
+}
+
+.analytics-header {
+  margin-bottom: 24px;
+}
+
+.analytics-header h2 {
+  font-size: 22px;
+  color: #25283d;
+  margin-bottom: 8px;
+}
+
+.analytics-header p {
+  font-size: 13px;
+  color: #9295a5;
+}
+
+.analytics-overview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.analytics-chart-card,
+.analytics-summary,
+.analytics-subjects {
+  background: white;
+  border: 1px solid #eeeef6;
+  border-radius: 20px;
+  padding: 28px;
+}
+
+.analytics-chart-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.analytics-chart-card h3 {
+  align-self: flex-start;
+  font-size: 17px;
+}
+
+.analytics-chart-card p {
+  color: #9295a5;
+  font-size: 13px;
+}
+
+.analytics-donut {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.analytics-donut-center {
+  width: 145px;
+  height: 145px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.analytics-donut-center strong {
+  font-size: 34px;
+  color: #7357e8;
+}
+
+.analytics-donut-center span {
+  font-size: 12px;
+  color: #9295a5;
+}
+
+.analytics-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.analytics-item {
+  background: #f7f8fc;
+  padding: 22px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+}
+
+.analytics-item span {
+  color: #818597;
+  font-size: 13px;
+}
+
+.analytics-item strong {
+  font-size: 30px;
+  color: #7357e8;
+}
+
+.analytics-item.success strong {
+  color: #22b58a;
+}
+
+.analytics-item.warning strong {
+  color: #f09b51;
+}
+
+.analytics-item.danger strong {
+  color: #e45c65;
+}
+
+.analytics-subjects h3 {
+  font-size: 18px;
+  margin-bottom: 28px;
+}
+
+.analytics-subject-row {
+  margin-bottom: 24px;
+}
+
+.analytics-subject-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.analytics-subject-info strong {
+  color: #7357e8;
+}
+
+.analytics-progress-track {
+  width: 100%;
+  height: 10px;
+  border-radius: 20px;
+  background: #eeeafd;
+  overflow: hidden;
+}
+
+.analytics-progress-fill {
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #7357e8, #aa97ff);
+  transition: width 0.4s ease;
+}
+
+.analytics-subject-row small {
+  display: block;
+  margin-top: 8px;
+  color: #9295a5;
+  font-size: 12px;
+}
+
+/* Переключатель темы */
+
+.theme-toggle {
+  margin-top: 24px;
+  padding: 12px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.16);
+  color: white;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+/* Тёмная тема */
+
+html[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+html[data-theme='dark'] body {
+  background: #151827;
+  color: #f1f2fc;
+}
+
+/* Основные поверхности */
+
+html[data-theme='dark'] .sidebar,
+html[data-theme='dark'] .stat-card,
+html[data-theme='dark'] .task-card,
+html[data-theme='dark'] .subject-card,
+html[data-theme='dark'] .add-task-section,
+html[data-theme='dark'] .calendar-section,
+html[data-theme='dark'] .deadline-card,
+html[data-theme='dark'] .deadlines-empty,
+html[data-theme='dark'] .analytics-chart-card,
+html[data-theme='dark'] .analytics-summary,
+html[data-theme='dark'] .analytics-subjects,
+html[data-theme='dark'] .subject-dropdown {
+  background: #22263a;
+  border-color: #363b54;
+}
+
+/* Заголовки и основной текст */
+
+html[data-theme='dark'] .tasks-section h2,
+html[data-theme='dark'] .subjects-header h2,
+html[data-theme='dark'] .add-task-section h2,
+html[data-theme='dark'] .deadlines-header h2,
+html[data-theme='dark'] .analytics-header h2,
+html[data-theme='dark'] .task-card h3,
+html[data-theme='dark'] .subject-card h3,
+html[data-theme='dark'] .deadline-info h3,
+html[data-theme='dark'] .calendar-header h2,
+html[data-theme='dark'] .calendar-details h3,
+html[data-theme='dark'] .analytics-chart-card h3,
+html[data-theme='dark'] .analytics-subjects h3,
+html[data-theme='dark'] .analytics-subject-info,
+html[data-theme='dark'] .calendar-task strong {
+  color: #f1f2fc;
+}
+
+/* Второстепенный текст */
+
+html[data-theme='dark'] .stat-card h3,
+html[data-theme='dark'] .task-card p,
+html[data-theme='dark'] .task-card small,
+html[data-theme='dark'] .subject-card p,
+html[data-theme='dark'] .subject-progress-info,
+html[data-theme='dark'] .form-group label,
+html[data-theme='dark'] .calendar-header p,
+html[data-theme='dark'] .calendar-weekday,
+html[data-theme='dark'] .calendar-task p,
+html[data-theme='dark'] .deadline-info p,
+html[data-theme='dark'] .deadline-info small,
+html[data-theme='dark'] .analytics-header p,
+html[data-theme='dark'] .analytics-chart-card p,
+html[data-theme='dark'] .analytics-subject-row small,
+html[data-theme='dark'] .analytics-item span {
+  color: #aeb6d0;
+}
+
+/* Боковое меню */
+
+html[data-theme='dark'] .sidebar nav button {
+  color: #b8bdd4;
+}
+
+html[data-theme='dark'] .sidebar nav button:hover,
+html[data-theme='dark'] .sidebar nav button.active {
+  background: #343354;
+  color: #c8bfff;
+}
+
+html[data-theme='dark'] .sidebar {
+  border-right: 1px solid #363b54;
+}
+
+/* Поля ввода */
+
+html[data-theme='dark'] .form-group input,
+html[data-theme='dark'] .form-group select,
+html[data-theme='dark'] .subject-form input {
+  background: #2c3048;
+  border-color: #454a64;
+  color: #f1f2fc;
+}
+
+html[data-theme='dark'] input::placeholder {
+  color: #a1a8bf;
+}
+
+/* Календарь */
+
+html[data-theme='dark'] .calendar-day,
+html[data-theme='dark'] .calendar-task {
+  background: #2c3048;
+  color: #f1f2fc;
+}
+
+html[data-theme='dark'] .calendar-day:hover {
+  background: #39365e;
+}
+
+html[data-theme='dark'] .calendar-day.selected {
+  background: #7357e8;
+  color: white;
+}
+
+html[data-theme='dark'] .calendar-details {
+  border-top-color: #363b54;
+}
+
+/* Диаграммы и статистика */
+
+html[data-theme='dark'] .analytics-item {
+  background: #2c3048;
+}
+
+html[data-theme='dark'] .analytics-donut-center {
+  background: #22263a;
+}
+
+html[data-theme='dark'] .subject-progress-bar,
+html[data-theme='dark'] .analytics-progress-track {
+  background: #3b3b59;
+}
+
+/* Меню и кнопки */
+
+html[data-theme='dark'] .subject-menu-btn {
+  color: #c5cae0;
+}
+
+html[data-theme='dark'] .subject-menu-btn:hover,
+html[data-theme='dark'] .subject-dropdown button:hover {
+  background: #363654;
+}
+
+html[data-theme='dark'] .task-card .edit-button,
+html[data-theme='dark'] .deadline-actions button {
+  background: #383456;
+  color: #c8bfff;
+}
+
+html[data-theme='dark'] .task-card .delete-button {
+  background: #49303e;
+  color: #ff9eaa;
+}
+
+html[data-theme='dark'] .cancel-btn {
+  background: #2c3048;
+  border-color: #454a64;
+  color: #e5e7f5;
+}
+
+html[data-theme='dark'] .cancel-btn:hover {
+  background: #363b54;
+}
+
+/* Цветовые индикаторы дедлайнов */
+
+html[data-theme='dark'] .deadline-badge.overdue {
+  background: #49303e;
+  color: #ff9eaa;
+}
+
+html[data-theme='dark'] .deadline-badge.urgent {
+  background: #493b2b;
+  color: #ffc17c;
+}
+
+html[data-theme='dark'] .deadline-badge.normal {
+  background: #24483f;
+  color: #91e8c8;
+}
+
+/* Иконки бокового меню */
+
+.sidebar nav button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sidebar nav button svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Профиль студента */
+
+.profile-section {
+  margin-bottom: 35px;
+}
+
+.profile-card {
+  background: white;
+  padding: 35px;
+  border: 1px solid #eeeef6;
+  border-radius: 20px;
+}
+
+.profile-heading {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+.profile-avatar {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background: #f0edff;
+  color: #7357e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.profile-heading h2 {
+  color: #25283d;
+  font-size: 23px;
+  margin-bottom: 7px;
+}
+
+.profile-heading p {
+  color: #9295a5;
+  font-size: 14px;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 450px;
+  margin-bottom: 35px;
+}
+
+.profile-form label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.profile-form input {
+  padding: 14px 16px;
+  border: 1px solid #e0e0ec;
+  background: #fafaff;
+  border-radius: 11px;
+  outline: none;
+}
+
+.profile-form input:focus {
+  border-color: #7357e8;
+}
+
+.profile-form button {
+  align-self: flex-start;
+  padding: 14px 22px;
+  background: #7357e8;
+  color: white;
+  border: none;
+  border-radius: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.profile-form button:hover {
+  background: #5e43ce;
+}
+
+.profile-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.profile-summary>div {
+  padding: 22px;
+  background: #f7f8fc;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.profile-summary span {
+  font-size: 13px;
+  color: #818597;
+}
+
+.profile-summary strong {
+  font-size: 28px;
+  color: #7357e8;
+}
+
+/* Тёмная тема профиля */
+
+html[data-theme='dark'] .profile-card {
+  background: #22263a;
+  border-color: #363b54;
+}
+
+html[data-theme='dark'] .profile-heading h2,
+html[data-theme='dark'] .profile-form label {
+  color: #f1f2fc;
+}
+
+html[data-theme='dark'] .profile-form input,
+html[data-theme='dark'] .profile-summary>div {
+  background: #2c3048;
+  border-color: #454a64;
+  color: #f1f2fc;
+}
+
+/* Адаптивность: все размеры экранов в одном месте */
+/* Мини-профиль в боковом меню */
+
+.sidebar-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin-top: auto;
+  padding: 12px;
+  border: 1px solid #eeeef6;
+  border-radius: 14px;
+  background: #f7f8fc;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sidebar-profile:hover {
+  background: #f0edff;
+  border-color: #d9d0ff;
+}
+
+.sidebar-profile-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #e9e3ff;
+  color: #7357e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.sidebar-profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar-profile-info strong {
+  font-size: 13px;
+  color: #25283d;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sidebar-profile-info small {
+  font-size: 11px;
+  color: #9295a5;
+}
+
+.sidebar-profile>svg {
+  color: #9295a5;
+  flex-shrink: 0;
+}
+
+/* Тёмная тема */
+
+html[data-theme='dark'] .sidebar-profile {
+  background: #2c3048;
+  border-color: #454a64;
+}
+
+html[data-theme='dark'] .sidebar-profile:hover {
+  background: #383456;
+}
+
+html[data-theme='dark'] .sidebar-profile-info strong {
+  color: #f1f2fc;
+}
+
+html[data-theme='dark'] .sidebar-profile-info small {
+  color: #aeb6d0;
+}
+
+/* Кнопка мобильного меню */
+
+.mobile-menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 11px;
+  background: #f0edff;
+  color: #7357e8;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.mobile-menu-toggle:hover {
+  background: #e3dcff;
+}
+
+.mobile-menu-toggle:focus-visible {
+  outline: 3px solid #a08bfb;
+  outline-offset: 2px;
+}
+
+/* Кнопка в тёмной теме */
+
+html[data-theme='dark'] .mobile-menu-toggle {
+  background: #343354;
+  color: #c8bfff;
+}
+
+/* Улучшенная главная страница */
+
+.header-date {
+  margin-top: 12px;
+  font-size: 13px;
+  opacity: 0.85;
+  text-transform: capitalize;
+}
+
+.dashboard-add-btn {
+  display: block;
+  margin-top: 24px;
+  padding: 13px 22px;
+  background: white;
+  color: #7357e8;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dashboard-add-btn:hover {
+  background: #f0edff;
+  transform: translateY(-2px);
+}
+/* Резервная копия */
+
+.backup-section {
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 1px solid #eeeef6;
+}
+
+.backup-section h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.backup-section p {
+  color: #818597;
+  font-size: 13px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.backup-button {
+  padding: 14px 22px;
+  background: #7357e8;
+  color: white;
+  border: none;
+  border-radius: 11px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.backup-button:hover {
+  background: #5e43ce;
+}
+
+/* Тёмная тема */
+
+html[data-theme='dark'] .backup-section {
+  border-top-color: #363b54;
+}
+
+html[data-theme='dark'] .backup-section h3 {
+  color: #f1f2fc;
+}
+
+html[data-theme='dark'] .backup-section p {
+  color: #aeb6d0;
+}
+
+/* Восстановление данных */
+
+.backup-import {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.backup-import label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #25283d;
+}
+
+.backup-import input {
+  width: 100%;
+  max-width: 450px;
+  padding: 12px;
+  border: 1px dashed #b7a8f5;
+  border-radius: 12px;
+  background: #faf9ff;
+  color: #616579;
+  font-size: 13px;
+}
+
+.backup-import input::file-selector-button {
+  border: none;
+  background: #f0edff;
+  color: #7357e8;
+  padding: 10px 15px;
+  border-radius: 8px;
+  margin-right: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Тёмная тема */
+
+html[data-theme='dark'] .backup-import label {
+  color: #f1f2fc;
+}
+
+html[data-theme='dark'] .backup-import input {
+  background: #2c3048;
+  color: #f1f2fc;
+  border-color: #454a64;
+}
+@media (max-width: 1100px) {
+  .statistics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .main-content {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 800px) {
+  .task-form {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-overview {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    position: static;
+    padding: 20px;
+  }
+
+  .sidebar p {
+    margin-bottom: 18px;
+  }
+
+  .sidebar-profile {
+    margin-top: 18px;
+    max-width: 300px;
+  }
+
+  .sidebar nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .main-content {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .header {
+    padding: 28px 22px;
+  }
+
+  .header h1 {
+    font-size: 24px;
+  }
+
+  .statistics {
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 18px;
+  }
+
+  .stat-card h2 {
+    font-size: 27px;
+  }
+
+  .task-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-card button {
+    width: 100%;
+  }
+
+  .task-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .calendar-section {
+    padding: 18px;
+  }
+
+  .calendar-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .calendar-grid {
+    gap: 4px;
+  }
+
+  .calendar-day {
+    min-height: 52px;
+    border-radius: 8px;
+  }
+
+  .calendar-day small {
+    font-size: 8px;
+  }
+
+  .calendar-task {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .deadline-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .deadline-actions {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  .deadline-actions button {
+    width: 100%;
+  }
+
+  /* Мобильное меню */
+
+  .sidebar {
+    position: relative;
+  }
+
+  .sidebar p {
+    margin-bottom: 0;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .sidebar .sidebar-nav {
+    display: none;
+  }
+
+  .sidebar .sidebar-nav.mobile-open {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 8px;
+    margin-top: 18px;
+  }
+
+  .sidebar .sidebar-nav button {
+    width: 100%;
+  }
+
+  .sidebar-profile {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .subject-form {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  .analytics-summary {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .analytics-chart-card,
+  .analytics-summary,
+  .analytics-subjects {
+    padding: 18px;
+  }
+
+  .analytics-item {
+    padding: 15px;
+  }
+
+  .analytics-item strong {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 380px) {
+  .statistics {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-card {
+    padding: 20px;
+  }
+
+  .profile-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-heading {
+    flex-wrap: wrap;
+  }
+
+  .profile-form button {
+    width: 100%;
+  }
+}
